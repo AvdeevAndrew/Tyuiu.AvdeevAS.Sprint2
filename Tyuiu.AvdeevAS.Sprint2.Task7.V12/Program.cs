@@ -1,5 +1,5 @@
-﻿using Tyuiu.AvdeevAS.Sprint2.Task6.V12.Lib;
-namespace Tyuiu.AvdeevAS.Sprint2.Task6.V12
+﻿using Tyuiu.AvdeevAS.Sprint2.Task7.V12.Lib;
+namespace Tyuiu.AvdeevAS.Sprint2.Task7.V12
 {
     internal class Program
     {
@@ -22,16 +22,13 @@ namespace Tyuiu.AvdeevAS.Sprint2.Task6.V12
             Console.WriteLine("*                               ИСХОДНЫЕ ДАННЫЕ:                          *");
             Console.WriteLine("***************************************************************************");
 
-            Console.Write("Введите год (g): ");
-            int g = int.Parse(Console.ReadLine());
+            Console.Write("Введите координату X: ");
+            double x = double.Parse(Console.ReadLine());
 
-            Console.Write("Введите месяц (m): ");
-            int m = int.Parse(Console.ReadLine());
+            Console.Write("Введите координату Y: ");
+            double y = double.Parse(Console.ReadLine());
 
-            Console.Write("Введите число (n): ");
-            int n = int.Parse(Console.ReadLine());
 
-        
 
 
 
@@ -40,10 +37,14 @@ namespace Tyuiu.AvdeevAS.Sprint2.Task6.V12
             Console.WriteLine("РЕЗУЛЬТАТ:                                                                *");
             Console.WriteLine("***************************************************************************");
 
-            // Вычисление предыдущего дня
-            
-
-            Console.WriteLine($"Предыдущий день: {ds.FindDateOfPreviousDay(g, m, n)}");
+            if (ds.CheckDotInShadedArea(x, y))
+            {
+                Console.WriteLine($"Точка ({x}, {y}) находится в заштрихованной области.");
+            }
+            else
+            {
+                Console.WriteLine($"Точка ({x}, {y}) не находится в заштрихованной области.");
+            }
 
             Console.ReadKey();
         }
