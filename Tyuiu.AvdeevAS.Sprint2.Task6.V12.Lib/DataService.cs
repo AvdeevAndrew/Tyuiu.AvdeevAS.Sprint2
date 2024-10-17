@@ -25,7 +25,8 @@ namespace Tyuiu.AvdeevAS.Sprint2.Task6.V12.Lib
             // Если это не первый день месяца
             if (n > 1)
             {
-                return Convert.ToString((n - 1));
+                n -= 1;
+
             }
             else
             {
@@ -51,8 +52,9 @@ namespace Tyuiu.AvdeevAS.Sprint2.Task6.V12.Lib
                     _ => throw new ArgumentOutOfRangeException("Некорректный номер месяца")
                 };
 
-                return Convert.ToString(prevMonthDays);
+                n = prevMonthDays;
             }
+            return $"{n:00}.{m:00}.{g}";
         }
     }
 }
